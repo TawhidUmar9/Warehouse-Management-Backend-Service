@@ -1,6 +1,8 @@
-package com.warehousemanagement.app.items;
+package com.warehousemanagement.app.controller;
 
 
+import com.warehousemanagement.app.entity.Items;
+import com.warehousemanagement.app.services.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +24,8 @@ public class ItemsController {
     }
 
     @GetMapping(params = "itemName")
-    public List<Items> getItem(@RequestParam String itemName) {
-        return itemsService.getItem(itemName);
+    public List<Items> getItemByName(@RequestParam String itemName) {
+        return itemsService.getItemByName(itemName);
     }
 
     @PostMapping

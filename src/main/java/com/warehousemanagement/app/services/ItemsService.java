@@ -1,6 +1,9 @@
-package com.warehousemanagement.app.items;
+package com.warehousemanagement.app.services;
 
+import com.warehousemanagement.app.entity.Items;
+import com.warehousemanagement.app.repo.ItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +26,16 @@ public class ItemsService {
         itemsRepository.save(item);
     }
 
-    public List<Items> getItem(String itemName) {
-        return itemsRepository.findItemByName(itemName);
+    public List<Items> getItemByName(String itemName) {
+        return itemsRepository.findItemsByName(itemName);
     }
+
+    public List<Items> getSortedItems(String sortBy) {
+        return itemsRepository.findAll(Sort.by(sortBy));
+    }
+
+    public void deleteItem(Long id) {
+        itemsRepository.deleteById(id);
+    }
+
 }

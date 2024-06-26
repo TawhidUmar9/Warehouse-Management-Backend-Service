@@ -1,4 +1,4 @@
-package com.warehousemanagement.app.items;
+package com.warehousemanagement.app.entity;
 
 import jakarta.persistence.*;
 
