@@ -73,4 +73,14 @@ public class Items {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Items{" +
+                "id=" + id +
+                ", itemName='" + itemName + '\'' +
+                ", itemDescription='" + itemDescription + '\'' +
+                ", itemQuantity=" + itemQuantity +
+                ", itemPrice=" + itemPrice +
+                '}';
+    }
 }

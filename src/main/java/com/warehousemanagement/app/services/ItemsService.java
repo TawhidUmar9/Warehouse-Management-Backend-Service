@@ -33,9 +33,13 @@ public class ItemsService {
     public List<Items> getSortedItems(String sortBy) {
         return itemsRepository.findAll(Sort.by(sortBy));
     }
+    public Items getItemById(Long id) {
+        return itemsRepository.findById(id).orElse(null);
+    }
 
     public void deleteItem(Long id) {
         itemsRepository.deleteById(id);
     }
+
 
 }
